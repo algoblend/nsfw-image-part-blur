@@ -1,24 +1,37 @@
 {
-  "name": "nsfw-image-part-blur",
-  "version": "0.1.0",
-  "description": "Detect and blur NSFW parts of an image (Node.js + browser)",
+  "name": "@algoblend/nsfw-image-part-blur",
+  "version": "1.0.0",
+  "description": "Detect NSFW content in images and blur only the unsafe parts (Node.js & browser ready).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node test/demo.ts"
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run build"
   },
-  "keywords": ["nsfw", "blur", "image", "tensorflow", "node", "typescript"],
+  "keywords": [
+    "nsfw",
+    "image",
+    "blur",
+    "tensorflow",
+    "tfjs",
+    "moderation",
+    "safe",
+    "node",
+    "typescript"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "@tensorflow/tfjs-node": "^4.10.0",
-    "nsfwjs": "^2.4.0",
-    "sharp": "^0.33.0",
-    "node-fetch": "^3.3.2"
+    "@tensorflow/tfjs-core": "^4.22.0",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "node-fetch": "^3.3.2",
+    "nsfwjs": "^4.2.1",
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typescript": "^5.4.0"
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
   }
 }
