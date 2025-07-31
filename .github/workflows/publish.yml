@@ -1,0 +1,19 @@
+name: Publish to npm
+on:
+  push:
+    branches: [ main ]  # Trigger on push to main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm run build  # If you have a build step (e.g., TypeScript)
+      #- run: npm test       # Optional: Run tests before publishing
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
