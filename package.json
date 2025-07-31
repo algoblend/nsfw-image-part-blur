@@ -1,5 +1,5 @@
 {
-  "name": "nsfw-image-part-blur",
+  "name": "@algoblend/nsfw-image-part-blur",
   "version": "1.0.2",
   "description": "Detect and blur NSFW parts of an image (Node.js + browser)",
   "main": "dist/index.js",
