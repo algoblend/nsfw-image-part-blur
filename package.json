@@ -1,0 +1,24 @@
+{
+  "name": "nsfw-image-part-blur",
+  "version": "0.1.0",
+  "description": "Detect and blur NSFW parts of an image (Node.js + browser)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node test/demo.ts"
+  },
+  "keywords": ["nsfw", "blur", "image", "tensorflow", "node", "typescript"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.10.0",
+    "nsfwjs": "^2.4.0",
+    "sharp": "^0.33.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.4.0"
+  }
+}
