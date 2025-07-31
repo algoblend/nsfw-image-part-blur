@@ -1,21 +1,18 @@
-import nsfwjs, { NSFWJS } from 'nsfwjs';
+import * as nsfwjs from 'nsfwjs';
 import * as tf from '@tensorflow/tfjs-node';
 
-let model: NSFWJS;
+let model: any;
 
 export async function loadModel() {
   if (!model) {
-    model = await nsfwjs.load("MobileNetV2");
+    const nsfwModel = await nsfwjs.load();
+    model = nsfwModel;
   }
   return model;
 }
 
-export async function detectNSFWRegions(imageBuffer: Buffer): Promise<
-  { className: string; probability: number }[]
-> {
-  // Explicit cast to Tensor3D to fix the error
-  const decoded = tf.node.decodeImage(imageBuffer, 3) as tf.Tensor3D;
-
+export async function detectNSFWRegions(imageBuffer: Buffer): Promise<any[]> {
+  const decoded = tf.node.decodeImage(imageBuffer, 3);
   const mdl = await loadModel();
   const predictions = await mdl.classify(decoded);
   decoded.dispose();
