@@ -5,7 +5,7 @@ let model: NSFWJS;
 
 export async function loadModel() {
   if (!model) {
-    model = await nsfwjs.load("MobileNetV2"); // Load NSFW model from CDN
+    model = await nsfwjs.load("MobileNetV2");
   }
   return model;
 }
